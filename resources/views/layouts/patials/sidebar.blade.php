@@ -35,7 +35,7 @@
 
           <li class="nav-item">
             <a href="{{ route('admin.school') }}" class="nav-link {{ Route::is('admin.school') ? 'active' : '' }} ">
-              <i class="fas fa-hospital    "></i>
+                <i class="fas fa-school    "></i>
               <p>
                 School
               </p>

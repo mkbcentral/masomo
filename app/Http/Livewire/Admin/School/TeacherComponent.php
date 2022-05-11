@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Admin;
+namespace App\Http\Livewire\Admin\School;
 
 use App\Models\Role;
 use App\Models\School;
@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Livewire\Component;
 
-class UsersCompoent extends Component
+class TeacherComponent extends Component
 {
     public $state =[];
     public $teacher;
@@ -66,6 +66,6 @@ class UsersCompoent extends Component
     public function render()
     {
         $school=School::where('id',Auth::user()->school_id)->first();
-        return view('livewire.admin.users-compoent',['school'=>$school]);
+        return view('livewire.admin.school.teacher-component',['school'=>$school]);
     }
 }

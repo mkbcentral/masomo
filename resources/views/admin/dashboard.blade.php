@@ -21,7 +21,7 @@
         <!-- Default box -->
         <div class="card">
           <div class="card-body">
-            @livewire('adpin.dashboard-component')
+            Repport
           </div>
         </div>
         <!-- /.card -->

@@ -2,6 +2,6 @@
     @if (Auth::user()->school==null)
         <x-create-school />
     @else
-            <x-details-scholl />
+        <x-details-school/>
     @endif
 </div>

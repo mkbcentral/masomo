@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Livewire\Component;
 
-class OptionCompoent extends Component
+class OptionComponent extends Component
 {
     public $state =[];
 
@@ -51,9 +51,10 @@ class OptionCompoent extends Component
         $this->option->delete();
         $this->dispatchBrowserEvent('data-deleted',['message'=>"Option delete successfull"]);
     }
+
     public function render()
     {
         $options=SchoolOption::all();
-        return view('livewire.admin.school.option-compoent',['options'=>$options]);
+        return view('livewire.admin.school.option-component',['options'=>$options]);
     }
 }

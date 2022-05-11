@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Livewire\Component;
 
-class SectorCompoent extends Component
+class SectorComponent extends Component
 {
     public $state =[];
     public $sector;
@@ -53,6 +53,6 @@ class SectorCompoent extends Component
     public function render()
     {
         $sectors=Sector::all();
-        return view('livewire.admin.school.sector-compoent',['sectors'=>$sectors]);
+        return view('livewire.admin.school.sector-component',['sectors'=>$sectors]);
     }
 }

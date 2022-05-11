@@ -22,7 +22,7 @@
         <!-- Default box -->
         <div class="card">
           <div class="card-body">
-            @livewire('admin.school.school-compoent')
+            @livewire('admin.school.school-component')
           </div>
         </div>
         <!-- /.card -->

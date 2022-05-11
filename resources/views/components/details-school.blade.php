@@ -64,13 +64,13 @@
         <div class="card-body">
           <div class="tab-content">
              <div wire:ignore.self class="tab-pane " id="sector">
-                @livewire('admin.school.sector-compoent')
+                @livewire('admin.school.sector-component')
             </div>
             <div wire:ignore.self class="tab-pane" id="section">
-                @livewire('admin.school.option-compoent')
+                @livewire('admin.school.option-component')
             </div>
             <div wire:ignore.self class="tab-pane active" id="users">
-                @livewire('admin.users-compoent')
+                @livewire('admin.school.teacher-component')
             </div>
 
           </div>
