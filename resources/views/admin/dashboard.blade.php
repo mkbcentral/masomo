@@ -21,7 +21,7 @@
         <!-- Default box -->
         <div class="card">
           <div class="card-body">
-            Repport
+            @livewire('admin.dashboard.user-counter-component')
           </div>
         </div>
         <!-- /.card -->

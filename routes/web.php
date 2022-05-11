@@ -1,8 +1,4 @@
 <?php
-
-use App\Http\Controllers\DashboardController;
-use App\Http\Livewire\Admin\School\SchoolCompoent;
-use App\Http\Livewire\Adpin\DashboardComponent;
 use Illuminate\Support\Facades\Route;
 
 /*
