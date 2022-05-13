@@ -6,6 +6,8 @@
   <title>{{config('app.name')}}</title>
 
   <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+  <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('masomo.png') }}">
+
   @livewireStyles
   @stack('styles')
 </head>
@@ -34,5 +36,6 @@
     <script type="text/javascript" src="{{ mix('js/toast.js') }}"></script>
     <script type="text/javascript" src="{{ mix('js/dialog.js') }}"></script>
     @livewireScripts
+    @stack('js')
 </body>
 </html>

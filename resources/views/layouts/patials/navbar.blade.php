@@ -47,7 +47,7 @@
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
-              <img src="{{ asset('defautl-user.jpg') }}" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+              <img id="profileImage1" src="{{Auth::user()->avatar==null ? asset('defautl-user.jpg') : Storage::url(Auth::user()->avatar) }}" alt="User Avatar" class="img-size-50 mr-3 img-circle">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   Brad Diesel
@@ -82,16 +82,16 @@
       </li>
       <li class="nav-item dropdown user-menu">
         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-            <img src="{{ asset('defautl-user.jpg') }}"
+            <img id="profileImage2" src="{{Auth::user()->avatar==null ? asset('defautl-user.jpg') : Storage::url(Auth::user()->avatar) }}"
                  class="user-image img-circle elevation-2" alt="User Image">
         </a>
         <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
             <!-- User image -->
             <li class="user-header bg-primary">
-                <img src="{{ asset('defautl-user.jpg') }}"
+                <img id="profileImage3" src="{{Auth::user()->avatar==null ? asset('defautl-user.jpg') : Storage::url(Auth::user()->avatar) }}"
                      class="img-circle elevation-2"
                      alt="User Image">
-                <p>
+                <p x-ref="username">
                     {{ Auth::user()->name }}
                 </p>
             </li>

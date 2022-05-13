@@ -2,7 +2,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="#" class="brand-link">
-      <img src="{{ asset('logo.jpg') }}" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <img src="{{ asset('masomo.png') }}" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">{{config('app.name')}}</span>
     </a>
 
@@ -11,10 +11,10 @@
       <!-- Sidebar user (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="{{ asset('defautl-user.jpg') }}" class="img-circle elevation-2" alt="User Image">
+          <img src="{{Auth::user()->avatar==null ? asset('defautl-user.jpg') : Storage::url(Auth::user()->avatar) }}" id="profileImage" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">{{Auth::user()->name}}</a>
+          <a href="#" class="d-block" x-ref="username">{{Auth::user()->name}}</a>
         </div>
       </div>
 
@@ -38,6 +38,15 @@
                 <i class="fas fa-school    "></i>
               <p>
                 School
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="{{ route('user.profil') }}" class="nav-link {{ Route::is('user.profil') ? 'active' : '' }} ">
+                <i class="fa fa-user" aria-hidden="true"></i>
+              <p>
+                My profil
               </p>
             </a>
           </li>
