@@ -6,16 +6,16 @@
             </div>
         </div>
         <div class="d-flex justify-content-center mt-2">
-            <div x-data="{imagePreview: '{{Auth::user()->school==null ? asset('logo.jpg') : Storage::url(Auth::user()->logo_url) }}'}">
+            <div x-data="{imagePreviewLogoUrl: '{{Auth::user()->school==null ? asset('logo.jpg') : Storage::url(Auth::user()->logo_url) }}'}">
                 <input class="d-none" wire:model='logo_url' type="file" x-ref="image"x-on:change="
                                         reader = new FileReader();
                                         reader.onload=(event)=>{
-                                            imagePreview=event.target.result;
+                                            imagePreviewLogoUrl=event.target.result;
                                         };
                                         reader.readAsDataURL($refs.image.files[0]);
                                     "
                                 />
-                <img x-on:click="$refs.image.click()"  x-bind:src="imagePreview ? imagePreview: '{{ asset('defautl-user.jpg') }}'" width="70" height="70" class="user-image img-circle elevation-2" alt="User Image">
+                <img x-on:click="$refs.image.click()"  x-bind:src="imagePreviewLogoUrl ? imagePreviewLogoUrl: '{{ asset('defautl-user.jpg') }}'" width="70" height="70" class="user-image img-circle elevation-2" alt="User Image">
             </div>
         </div>
         <div class="d-flex justify-content-center">

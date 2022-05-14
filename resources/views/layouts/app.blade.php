@@ -6,7 +6,8 @@
   <title>{{config('app.name')}}</title>
 
   <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-  <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('masomo.png') }}">
+  <link rel="icon" type="image/png" sizes="96x96" href="{{Auth::user()->school==null ? asset('logo.jpg') :
+  Storage::url(Auth::user()->school->logo_url) }}">
 
   @livewireStyles
   @stack('styles')

@@ -1,42 +1,6 @@
 <div class="row">
     <div class="col-md-3">
-        <!-- Widget: user widget style 2 -->
-        <div class="card card-widget widget-user-2">
-            <!-- Add the bg color to the header using any of the bg-* classes -->
-            <div class="widget-user-header bg-warning">
-              <div class="widget-user-image">
-                <img class="img-circle my-log elevation-2" src="{{Auth::user()->school==null ? asset('logo.jpg') : Storage::url(Auth::user()->school->logo_url) }}" alt="User Avatar">
-              </div>
-              <!-- /.widget-user-image -->
-              <h3 class="widget-user-username">{{Auth::user()->school->name}}</h3>
-              <h5 class="widget-user-desc">Savoir est pouvoir</h5>
-            </div>
-            <div class="card-footer p-0">
-              <ul class="nav flex-column">
-                <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    Projects <span class="float-right badge bg-primary">31</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    Tasks <span class="float-right badge bg-info">5</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    Completed Projects <span class="float-right badge bg-success">12</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    Followers <span class="float-right badge bg-danger">842</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <!-- /.widget-user -->
+       @livewire('admin.school.detail-school-component')
       </div>
       <!-- /.col -->
     <!-- /.col -->
@@ -51,7 +15,7 @@
             </li>
             <li  class="nav-item">
                 <a wire:ignore.self class="nav-link" href="#section" data-toggle="tab">
-                    <i class="fas fa-folder-open    "></i> Sections
+                    <i class="fas fa-folder-open    "></i> Options
                 </a>
             </li>
             <li  class="nav-item">

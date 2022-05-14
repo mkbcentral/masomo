@@ -7,6 +7,9 @@
                     <i class="fa fa-plus-circle" aria-hidden="true"></i> Add new option
                 </button>
             </div>
+            @if ($options->isEmpty())
+            <h4 class="text-center text-success"><i class="fa fa-database" aria-hidden="true"></i> No data load</h4>
+            @else
             <table class="table table-hover table-sm">
                 <thead>
                     <tr>
@@ -36,6 +39,7 @@
                     @endforeach
                 </tbody>
             </table>
+            @endif
         </div>
     </div>
     @include('components.modals.add-option')
