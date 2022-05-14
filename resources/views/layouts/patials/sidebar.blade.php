@@ -41,7 +41,7 @@
             <a href="{{ route('admin.school') }}" class="nav-link {{ Route::is('admin.school') ? 'active' : '' }} ">
                 <i class="fas fa-school    "></i>
               <p>
-                School
+                School management
               </p>
             </a>
           </li>

@@ -17,6 +17,7 @@ class UserCounterComponent extends Component
     {
       return $this->usersCount=User::query()
             ->whereBetween('created_at',$this->getDateRange($option))
+            ->where('school_id',auth()->user()->school->id)
             ->count();
     }
 
