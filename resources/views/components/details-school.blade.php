@@ -5,7 +5,7 @@
             <!-- Add the bg color to the header using any of the bg-* classes -->
             <div class="widget-user-header bg-warning">
               <div class="widget-user-image">
-                <img class="img-circle elevation-2" src="{{ asset('logo.jpg') }}" alt="User Avatar">
+                <img class="img-circle my-log elevation-2" src="{{Auth::user()->school==null ? asset('logo.jpg') : Storage::url(Auth::user()->school->logo_url) }}" alt="User Avatar">
               </div>
               <!-- /.widget-user-image -->
               <h3 class="widget-user-username">{{Auth::user()->school->name}}</h3>
@@ -45,7 +45,7 @@
         <div class="card-header p-2">
           <ul class="nav nav-pills">
             <li  class="nav-item">
-                <a wire:ignore.self class="nav-link " href="#sector" data-toggle="tab">
+                <a wire:ignore.self class="nav-link active" href="#sector" data-toggle="tab">
                     <i class="fa fa-folder" aria-hidden="true"></i> Sector
                 </a>
             </li>
@@ -55,7 +55,7 @@
                 </a>
             </li>
             <li  class="nav-item">
-                <a wire:ignore.self class="nav-link active" href="#users" data-toggle="tab">
+                <a wire:ignore.self class="nav-link" href="#users" data-toggle="tab">
                     <i class="fa fa-users" aria-hidden="true"></i> Teachers
                 </a>
             </li>
@@ -63,13 +63,13 @@
         </div><!-- /.card-header -->
         <div class="card-body">
           <div class="tab-content">
-             <div wire:ignore.self class="tab-pane " id="sector">
+             <div wire:ignore.self class="tab-pane active" id="sector">
                 @livewire('admin.school.sector-component')
             </div>
             <div wire:ignore.self class="tab-pane" id="section">
                 @livewire('admin.school.option-component')
             </div>
-            <div wire:ignore.self class="tab-pane active" id="users">
+            <div wire:ignore.self class="tab-pane" id="users">
                 @livewire('admin.school.teacher-component')
             </div>
 

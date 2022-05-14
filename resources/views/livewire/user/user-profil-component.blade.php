@@ -147,7 +147,7 @@
 @push('styles')
     <style>
         .profile-user-img:hover{
-            background-color: blue;
+            background-color: gray;
             cursor: pointer
         }
     </style>

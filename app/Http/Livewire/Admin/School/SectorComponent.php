@@ -52,7 +52,7 @@ class SectorComponent extends Component
     }
     public function render()
     {
-        $sectors=Sector::all();
+        $sectors=Sector::where('school_id',auth()->user()->school_id)->get();
         return view('livewire.admin.school.sector-component',['sectors'=>$sectors]);
     }
 }

@@ -54,7 +54,7 @@ class OptionComponent extends Component
 
     public function render()
     {
-        $options=SchoolOption::all();
+        $options=SchoolOption::where('school_id',auth()->user()->school_id)->get();
         return view('livewire.admin.school.option-component',['options'=>$options]);
     }
 }
