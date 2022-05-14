@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\UserController;
+use App\Http\Livewire\User\UserProfilComponent;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,7 +20,5 @@ Route::get('/', function () {
 });
 
 Route::middleware('auth')->group(function(){
-    Route::controller(UserController::class)->group(function(){
-        Route::get('/user/profil','profil')->name('user.profil');
-    });
+    Route::get('/user/profil',UserProfilComponent::class)->name('user.profil');
 });

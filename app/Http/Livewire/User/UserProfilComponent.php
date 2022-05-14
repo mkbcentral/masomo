@@ -55,7 +55,6 @@ class UserProfilComponent extends Component
             // On busy websites, this cleanup code can run in multiple threads causing part of the output
             // of allFiles() to have already been deleted by another thread.
             if (! $storage->exists($filePathname)) continue;
-
             $yesterdaysStamp = now()->subSecond(5)->timestamp;
             if ($yesterdaysStamp > $storage->lastModified($filePathname)) {
                 $storage->delete($filePathname);

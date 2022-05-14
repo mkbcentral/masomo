@@ -18,11 +18,10 @@
         @include('layouts.patials.navbar')
         @include('layouts.patials.sidebar')
         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
-                @yield('content')
+        <div class="content-wrapper py-2 px-2">
+            {{$slot}}
         </div>
         <!-- /.content-wrapper -->
-
         @include('layouts.patials.footer')
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
