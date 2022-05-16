@@ -1,5 +1,5 @@
 <div>
-    <div class="card">
+    <div class="card {{setting('is_dark_mode') ? 'bg-dark':'bg-light'}}"">
         <div class="card-body">
             <div class="d-flex justify-content-between">
                 <h4>LISTE DES SECTION</h4>
@@ -13,7 +13,6 @@
             <table class="table table-hover table-sm">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
                         <th scope="col">Section</th>
                         <th class="text-center" scope="col">Options</th>
                     </tr>
@@ -21,14 +20,6 @@
                 <tbody>
                     @foreach ($sectors as $sector)
                         <tr>
-                            <th scope="row">
-                                <div class="form-check">
-
-                                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" checked>
-
-                                  </label>
-                                </div>
-                            </th>
                             <td>{{$sector->name}}</td>
                             <td class="text-center">
                                 <a href="#" type="button" data-toggle="modal" data-target="#editSectorModal" wire:click='edit({{$sector}})'><i class="fas fa-edit    "></i></a>

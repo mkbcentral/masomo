@@ -1,5 +1,5 @@
 <div>
-    <div class="card">
+    <div class="card {{setting('is_dark_mode') ? 'bg-dark':'bg-light'}}"">
         <div class="card-body">
             <div class="d-flex justify-content-between">
                 <h4>LISTE DES CLASSE MATERNELLES</h4>
@@ -13,7 +13,7 @@
             <table class="table table-hover table-sm mt-2">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
+
                         <th scope="col">Classe</th>
                         <th scope="col">Enseignant titulaire</th>
                         <th class="text-center" scope="col">Options</th>
@@ -22,14 +22,7 @@
                 <tbody>
                     @foreach ($classes as $classe)
                         <tr>
-                            <th scope="row">
-                                <div class="form-check">
 
-                                      <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" checked>
-
-                                    </label>
-                                  </div>
-                            </th>
                             <td>{{$classe->name}}</td>
                             <td class="{{$classe->user==null?'text-danger':''}}"
                             >{{$classe->user==null?'Empty':$classe->user->name}}</td>

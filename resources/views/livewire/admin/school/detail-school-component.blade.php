@@ -1,6 +1,6 @@
 <div>
      <!-- Widget: user widget style 2 -->
-     <div class="card card-widget widget-user-2">
+     <div class="card card-widget widget-user-2 {{setting('is_dark_mode') ? 'bg-dark':'bg-light'}}">
         <!-- Add the bg color to the header using any of the bg-* classes -->
         <div class="widget-user-header bg-info">
           <div class="widget-user-image" x-data="{imagePreviewLogo: '{{Auth::user()->school->logo_url==null ? asset('logo.jpg') : Storage::url(Auth::user()->school->logo_url) }}'}">

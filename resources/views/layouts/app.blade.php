@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{config('app.name')}}</title>
+  <title>{{setting('name_app')}} | App</title>
 
   <link rel="stylesheet" href="{{ mix('css/app.css') }}">
   <link rel="icon" type="image/png" sizes="96x96" href="{{Auth::user()->school==null ? asset('logo.jpg') :
@@ -13,13 +13,13 @@
   @stack('styles')
 </head>
 </head>
-<body class="hold-transition sidebar-mini">
+<body class="hold-transition sidebar-mini {{setting('sidebar_collapse') ? 'sidebar-collapse':''}}">
     <!-- Site wrapper -->
     <div class="wrapper">
         @include('layouts.patials.navbar')
         @include('layouts.patials.sidebar')
         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper py-2 px-2">
+        <div class="content-wrapper py-2 px-2 {{setting('is_dark_mode') ? 'bg-dark':'bg-light'}}">
             {{$slot}}
         </div>
         <!-- /.content-wrapper -->

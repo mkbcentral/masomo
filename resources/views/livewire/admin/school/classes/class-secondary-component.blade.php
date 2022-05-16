@@ -1,5 +1,5 @@
 <div>
-    <div class="card">
+    <div class="card {{setting('is_dark_mode') ? 'bg-dark':'bg-light'}}"">
         <div class="card-body">
             <div class="d-flex justify-content-between">
                 <h4>LISTE DES CLASSES SECONDAIRES</h4>

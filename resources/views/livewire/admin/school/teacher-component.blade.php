@@ -1,5 +1,5 @@
 <div>
-    <div class="card">
+    <div class="card {{setting('is_dark_mode') ? 'bg-dark':'bg-light'}}"">
         <div class="card-header border-0">
             <div class="d-flex justify-content-between">
             <h4>LISTE DES ENSEIGNANTS</h4>

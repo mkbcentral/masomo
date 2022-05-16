@@ -1,11 +1,11 @@
-<div class="row">
+<div class="row ">
     <div class="col-md-3">
        @livewire('admin.school.detail-school-component')
       </div>
       <!-- /.col -->
     <!-- /.col -->
     <div class="col-md-9">
-      <div class="card">
+      <div class="card {{setting('is_dark_mode') ? 'bg-dark':'bg-light'}}"">
         <div class="card-header p-2">
           <ul class="nav nav-pills">
             <li  class="nav-item">

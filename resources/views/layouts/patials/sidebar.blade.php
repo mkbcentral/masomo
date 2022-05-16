@@ -56,7 +56,14 @@
               </p>
             </a>
           </li>
-
+          <li class="nav-item">
+            <a href="{{ route('admin.setting.app') }}" class="nav-link {{ Route::is('admin.setting.app') ? 'active' : '' }} ">
+                <i class="fas fa-cogs"></i>
+              <p>
+               Paramètres
+              </p>
+            </a>
+          </li>
           <li class="nav-item">
             <a href="{{ route('user.profil') }}" class="nav-link {{ Route::is('user.profil') ? 'active' : '' }} ">
                 <i class="fa fa-user" aria-hidden="true"></i>
