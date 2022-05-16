@@ -26,7 +26,7 @@
                     @error('email') <span class="error text-danger">{{ $message }}</span> @enderror
             </div>
             <div class="form-group">
-                <label for="sectorId">Role</label>
+                <label for="sectorId">Gender</label>
                 <select id="sectorId" class="form-control
                     @error('gender') is-invalid border border-danger rounded @enderror"
                      wire:model.defer="state.gender">

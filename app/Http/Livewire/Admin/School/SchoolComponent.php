@@ -24,18 +24,27 @@ class SchoolComponent extends Component
                 'email'=>'required'
             ]
         )->validate() ;
-        $school=School::create([
-            'name'=>$this->state['name'],
-            'phone'=>$this->state['phone'],
-            'email'=>$this->state['email'],
-            'logo_url'=>$this->getImagePath($this->logo_url),
-        ]);
+        if ($this->logo_url==null) {
+            $school=School::create([
+                'name'=>$this->state['name'],
+                'phone'=>$this->state['phone'],
+                'email'=>$this->state['email'],
+            ]);
+            $this->dispatchBrowserEvent('data-updated',['message'=>"Le logo empty please !"]);
+        } else {
+            $school=School::create([
+                'name'=>$this->state['name'],
+                'phone'=>$this->state['phone'],
+                'email'=>$this->state['email'],
+                'logo_url'=>$this->getImagePath($this->logo_url),
+            ]);
+            $preview=$user->school->logo_url;
+            Storage::disk('public')->delete($preview);
+            $this->cleanupOldUploads();
+        }
         $user=Auth::user();
         $user->school_id=$school->id;
         $user->update();
-        $preview=$user->school->logo_url;
-        Storage::disk('public')->delete($preview);
-        $this->cleanupOldUploads();
         $this->dispatchBrowserEvent('data-added',['message'=>"School created successfull"]);
     }
 

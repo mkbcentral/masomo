@@ -8,19 +8,18 @@ use Livewire\Component;
 class UserCounterComponent extends Component
 {
     public $usersCount;
-
     public function mount(){
-        $this->getUsersCount();;
+        $this->getUsersCount();
     }
 
     public function getUsersCount($option=1)
     {
-      return $this->usersCount=User::query()
+      return auth()->user()->school==null?$this->usersCount=0:$this->usersCount=User::query()
             ->whereBetween('created_at',$this->getDateRange($option))
             ->where('school_id',auth()->user()->school->id)
             ->count();
-    }
 
+    }
     public function getDateRange($option){
         if ($option==1) {
             return [now()->today(),now()];

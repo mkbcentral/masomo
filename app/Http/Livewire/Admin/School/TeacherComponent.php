@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Admin\School;
 
+use App\Http\Livewire\Services\UserService;
 use App\Models\Role;
 use App\Models\School;
 use App\Models\Sector;
@@ -16,6 +17,7 @@ class TeacherComponent extends Component
     public $state =[];
     public $teacher;
     public $sectors,$roles;
+    public $ROLE_NAME="Teacher";
     protected $listeners=['deleteTeacherListener'=>'delete'];
     public function mount(){
         $this->state=[
@@ -65,7 +67,7 @@ class TeacherComponent extends Component
     }
     public function render()
     {
-        $school=School::where('id',Auth::user()->school_id)->first();
-        return view('livewire.admin.school.teacher-component',['school'=>$school]);
+        $teachers=(new UserService())->getUserByRole($this->ROLE_NAME);
+        return view('livewire.admin.school.teacher-component',['teachers'=>$teachers]);
     }
 }

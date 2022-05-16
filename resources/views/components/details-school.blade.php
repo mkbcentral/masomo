@@ -10,7 +10,7 @@
           <ul class="nav nav-pills">
             <li  class="nav-item">
                 <a wire:ignore.self class="nav-link active" href="#sector" data-toggle="tab">
-                    <i class="fa fa-folder" aria-hidden="true"></i> Sector
+                    <i class="fa fa-folder" aria-hidden="true"></i> Sections
                 </a>
             </li>
             <li  class="nav-item">
@@ -20,7 +20,22 @@
             </li>
             <li  class="nav-item">
                 <a wire:ignore.self class="nav-link" href="#users" data-toggle="tab">
-                    <i class="fa fa-users" aria-hidden="true"></i> Teachers
+                    <i class="fa fa-users" aria-hidden="true"></i> Enseignants
+                </a>
+            </li>
+            <li  class="nav-item">
+                <a wire:ignore.self class="nav-link " href="#classes" data-toggle="tab">
+                    <i class="fa fa-users" aria-hidden="true"></i> Classes primaires
+                </a>
+            </li>
+            <li  class="nav-item">
+                <a wire:ignore.self class="nav-link " href="#secondary" data-toggle="tab">
+                    <i class="fa fa-users" aria-hidden="true"></i> Classes secondaires
+                </a>
+            </li>
+            <li  class="nav-item">
+                <a wire:ignore.self class="nav-link " href="#mat" data-toggle="tab">
+                    <i class="fa fa-users" aria-hidden="true"></i> Classes matern...
                 </a>
             </li>
           </ul>
@@ -33,10 +48,18 @@
             <div wire:ignore.self class="tab-pane" id="section">
                 @livewire('admin.school.option-component')
             </div>
-            <div wire:ignore.self class="tab-pane" id="users">
+            <div wire:ignore.self class="tab-pane " id="users">
                 @livewire('admin.school.teacher-component')
             </div>
-
+            <div wire:ignore.self class="tab-pane " id="classes">
+                @livewire('admin.school.classes.class-primary-component')
+            </div>
+            <div wire:ignore.self class="tab-pane " id="secondary">
+                @livewire('admin.school.classes.class-secondary-component')
+            </div>
+            <div wire:ignore.self class="tab-pane" id="mat">
+                @livewire('admin.school.classes.class-infant-component')
+            </div>
           </div>
           <!-- /.tab-content -->
         </div><!-- /.card-body -->

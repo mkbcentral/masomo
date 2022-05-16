@@ -2,9 +2,9 @@
     <div class="card">
         <div class="card-body">
             <div class="d-flex justify-content-between">
-                <h4>LIST OF OPTIONS</h4>
+                <h4>LISTE DES OPTIONS</h4>
                 <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#addOptionModal">
-                    <i class="fa fa-plus-circle" aria-hidden="true"></i> Add new option
+                    <i class="fa fa-plus-circle" aria-hidden="true"></i> Nouvelle option
                 </button>
             </div>
             @if ($options->isEmpty())
@@ -14,7 +14,7 @@
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Option name</th>
+                        <th scope="col">Option</th>
                         <th class="text-center" scope="col">Options</th>
                     </tr>
                 </thead>

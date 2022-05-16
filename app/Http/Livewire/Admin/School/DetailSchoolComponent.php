@@ -2,6 +2,9 @@
 
 namespace App\Http\Livewire\Admin\School;
 
+use App\Http\Livewire\Services\UserService as ServicesUserService;
+use App\Http\Livewire\User\UserService;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
@@ -12,6 +15,12 @@ class DetailSchoolComponent extends Component
     use WithFileUploads;
     public $logo;
 
+    public $teachers=0;
+    public $ROLE_NAME="Teacher";
+
+    public function mount(){
+        $this->teachers=(new ServicesUserService())->getUserByRole($this->ROLE_NAME)->count();
+    }
     public function updatedLogo(){
         $school=auth()->user()->school;
         $preview=$school->logo_url;

@@ -2,8 +2,8 @@
      <!-- Widget: user widget style 2 -->
      <div class="card card-widget widget-user-2">
         <!-- Add the bg color to the header using any of the bg-* classes -->
-        <div class="widget-user-header bg-warning">
-          <div class="widget-user-image" x-data="{imagePreviewLogo: '{{Auth::user()->school==null ? asset('logo.jpg') : Storage::url(Auth::user()->school->logo_url) }}'}">
+        <div class="widget-user-header bg-info">
+          <div class="widget-user-image" x-data="{imagePreviewLogo: '{{Auth::user()->school->logo_url==null ? asset('logo.jpg') : Storage::url(Auth::user()->school->logo_url) }}'}">
             <input class="d-none" wire:model='logo' type="file" x-ref="image"x-on:change="
                                         reader = new FileReader();
                                         reader.onload=(event)=>{
@@ -24,22 +24,7 @@
           <ul class="nav flex-column">
             <li class="nav-item">
               <a href="#" class="nav-link">
-                Projects <span class="float-right badge bg-primary">31</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                Tasks <span class="float-right badge bg-info">5</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                Completed Projects <span class="float-right badge bg-success">12</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                Followers <span class="float-right badge bg-danger">842</span>
+                Teachers <span class="float-right badge bg-primary">{{$teachers}}</span>
               </a>
             </li>
           </ul>

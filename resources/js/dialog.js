@@ -68,3 +68,77 @@ window.addEventListener('data-deleted',event=>{
         'success'
     );
 });
+
+//SHOW DELETE CALSS PRIMARY DIALOG
+window.addEventListener('show-delete-confirmation-classe',event=>{
+    Swal.fire({
+        title: 'Are-you sure ',
+        text: "To delete class ?",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes'
+        }).then((result) => {
+        if (result.isConfirmed) {
+            Livewire.emit('deleteClassPrimaryListener');
+        }
+        })
+})
+window.addEventListener('data-deleted',event=>{
+    Swal.fire(
+        'Oprétion !',
+        event.detail.message,
+        'success'
+    );
+});
+
+//SHOW DELETE CALSS SECONDARY DIALOG
+window.addEventListener('show-delete-confirmation-classe-secondary',event=>{
+    Swal.fire({
+        title: 'Are-you sure ',
+        text: "To delete class ?",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes'
+        }).then((result) => {
+        if (result.isConfirmed) {
+            Livewire.emit('deleteClassSecondaryListener');
+        }
+
+    })
+})
+window.addEventListener('data-deleted',event=>{
+    Swal.fire(
+        'Oprétion !',
+        event.detail.message,
+        'success'
+    );
+});
+
+//SHOW DELETE CALSS SECONDARY INFANT
+window.addEventListener('show-delete-confirmation-classe-infant',event=>{
+    Swal.fire({
+        title: 'Are-you sure ',
+        text: "To delete class ?",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes'
+        }).then((result) => {
+        if (result.isConfirmed) {
+            Livewire.emit('deleteClassInfantListener');
+        }
+
+    })
+})
+window.addEventListener('data-deleted',event=>{
+    Swal.fire(
+        'Oprétion !',
+        event.detail.message,
+        'success'
+    );
+});

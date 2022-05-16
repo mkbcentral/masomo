@@ -2,9 +2,9 @@
     <div class="card">
         <div class="card-body">
             <div class="d-flex justify-content-between">
-                <h4>LIST OF SECTOR</h4>
+                <h4>LISTE DES SECTION</h4>
                 <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#addSectorModal">
-                    <i class="fa fa-plus-circle" aria-hidden="true"></i> Add new sector
+                    <i class="fa fa-plus-circle" aria-hidden="true"></i> Nouvelle section
                 </button>
             </div>
             @if ($sectors->isEmpty())
@@ -14,9 +14,7 @@
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Sector name</th>
                         <th scope="col">Section</th>
-                        <th scope="col">Classes</th>
                         <th class="text-center" scope="col">Options</th>
                     </tr>
                 </thead>
@@ -32,8 +30,6 @@
                                 </div>
                             </th>
                             <td>{{$sector->name}}</td>
-                            <td>0</td>
-                            <td>0</td>
                             <td class="text-center">
                                 <a href="#" type="button" data-toggle="modal" data-target="#editSectorModal" wire:click='edit({{$sector}})'><i class="fas fa-edit    "></i></a>
                                 <a href="#" wire:click='showDeleteSector({{$sector}})'><i class="fa fa-trash text-danger" aria-hidden="true"></i></a>

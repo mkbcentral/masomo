@@ -2,9 +2,20 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="#" class="brand-link">
-      <img src="{{Auth::user()->school==null ? asset('logo.jpg') :
-                Storage::url(Auth::user()->school->logo_url) }}" id="logoImage"
+        @if (Auth::user()->school)
+            @if (Auth::user()->school->logo_url==null)
+                <img src="{{ asset('logo.jpg') }}" id="logoImage"
                 alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+            @else
+                <img src="{{Storage::url(Auth::user()->school->logo_url) }}" id="logoImage"
+                alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+            @endif
+        @else
+            <img src="{{Storage::url(Auth::user()->school->logo_url) }}" id="logoImage"
+            alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        @endif
+
+
       <span class="brand-text font-weight-light">{{config('app.name')}}</span>
     </a>
 
@@ -41,7 +52,7 @@
             <a href="{{ route('admin.school') }}" class="nav-link {{ Route::is('admin.school') ? 'active' : '' }} ">
                 <i class="fas fa-school    "></i>
               <p>
-                School management
+                Gestionnaire école
               </p>
             </a>
           </li>
@@ -50,7 +61,7 @@
             <a href="{{ route('user.profil') }}" class="nav-link {{ Route::is('user.profil') ? 'active' : '' }} ">
                 <i class="fa fa-user" aria-hidden="true"></i>
               <p>
-                My profil
+                Mon profile
               </p>
             </a>
           </li>

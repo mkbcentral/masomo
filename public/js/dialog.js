@@ -3696,6 +3696,63 @@ window.addEventListener('show-delete-confirmation-teacher', function (event) {
 });
 window.addEventListener('data-deleted', function (event) {
   sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire('Oprétion !', event.detail.message, 'success');
+}); //SHOW DELETE CALSS PRIMARY DIALOG
+
+window.addEventListener('show-delete-confirmation-classe', function (event) {
+  sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
+    title: 'Are-you sure ',
+    text: "To delete class ?",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes'
+  }).then(function (result) {
+    if (result.isConfirmed) {
+      Livewire.emit('deleteClassPrimaryListener');
+    }
+  });
+});
+window.addEventListener('data-deleted', function (event) {
+  sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire('Oprétion !', event.detail.message, 'success');
+}); //SHOW DELETE CALSS SECONDARY DIALOG
+
+window.addEventListener('show-delete-confirmation-classe-secondary', function (event) {
+  sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
+    title: 'Are-you sure ',
+    text: "To delete class ?",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes'
+  }).then(function (result) {
+    if (result.isConfirmed) {
+      Livewire.emit('deleteClassSecondaryListener');
+    }
+  });
+});
+window.addEventListener('data-deleted', function (event) {
+  sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire('Oprétion !', event.detail.message, 'success');
+}); //SHOW DELETE CALSS SECONDARY INFANT
+
+window.addEventListener('show-delete-confirmation-classe-infant', function (event) {
+  sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
+    title: 'Are-you sure ',
+    text: "To delete class ?",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes'
+  }).then(function (result) {
+    if (result.isConfirmed) {
+      Livewire.emit('deleteClassInfantListener');
+    }
+  });
+});
+window.addEventListener('data-deleted', function (event) {
+  sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire('Oprétion !', event.detail.message, 'success');
 });
 })();
 

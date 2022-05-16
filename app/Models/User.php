@@ -13,6 +13,7 @@ class User extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
     const ROLE_ADMIN='admin';
+    const ROLE_TEACHER='Teacher';
 
     /**
      * The attributes that are mass assignable.
@@ -56,6 +57,15 @@ class User extends Authenticatable
         }
     }
 
+    public function isTeacher(){
+        if ($this->role->name!=self::ROLE_TEACHER) {
+           return false;
+        }else{
+            return $this->role->id;
+        }
+    }
+
+
     public function school(){
         return $this->belongsTo(School::class);
     }
@@ -64,5 +74,8 @@ class User extends Authenticatable
     }
     public function sector(){
         return $this->belongsTo(Sector::class);
+    }
+    public function classe(){
+        return $this->hasOne(ClassSchoolPrimary::class);
     }
 }
