@@ -57,6 +57,22 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="{{ route('students.inscription') }}" class="nav-link {{ Route::is('students.inscription') ? 'active' : '' }} ">
+                <i class="fab  fa-poll-people"></i>
+              <p>
+                Inscriptions
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ route('student') }}" class="nav-link {{ Route::is('student') ? 'active' : '' }} ">
+                <i class="fab  fa-poll-people"></i>
+              <p>
+                Gestionnaire élèves
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="{{ route('admin.setting.app') }}" class="nav-link {{ Route::is('admin.setting.app') ? 'active' : '' }} ">
                 <i class="fas fa-cogs"></i>
               <p>

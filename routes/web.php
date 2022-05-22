@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\UserController;
+use App\Http\Livewire\Student\InscriptionComponent;
+use App\Http\Livewire\Student\StudentComponent;
 use App\Http\Livewire\User\UserProfilComponent;
 use Illuminate\Support\Facades\Route;
 
@@ -21,4 +23,6 @@ Route::get('/', function () {
 
 Route::middleware('auth')->group(function(){
     Route::get('/user/profil',UserProfilComponent::class)->name('user.profil');
+    Route::get('/student/management',StudentComponent::class)->name('student');
+    Route::get('/student/inscription',InscriptionComponent::class)->name('students.inscription');
 });
